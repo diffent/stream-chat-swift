@@ -246,16 +246,23 @@ extension ChannelsViewController: UITableViewDataSource, UITableViewDelegate {
             tableView.insertRows(at: [.row(row)], with: .none)
             
         case let .itemMoved(fromRow: row1, toRow: row2, _):
+            /*
             tableView.performBatchUpdates({
                 tableView.deleteRows(at: [.row(row1)], with: .none)
                 tableView.insertRows(at: [.row(row2)], with: .none)
             })
+            */
+            tableView.reloadData()
+            
             
         case let .itemUpdated(rows, _, _):
             tableView.reloadRows(at: rows.map({ .row($0) }), with: .none)
             
         case .itemRemoved(let row, _):
+            /*
             tableView.performBatchUpdates({ tableView.deleteRows(at: [.row(row)], with: .none) })
+            */
+            tableView.reloadData()
             
         case .reloaded:
             tableView.reloadData()

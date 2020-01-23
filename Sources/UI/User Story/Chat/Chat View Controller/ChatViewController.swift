@@ -324,6 +324,7 @@ extension ChatViewController {
             }
             
             UIView.performWithoutAnimation {
+                /*
                 tableView.performBatchUpdates({
                     tableView.insertRows(at: [indexPath], with: .none)
                     
@@ -331,6 +332,9 @@ extension ChatViewController {
                         tableView.reloadRows(at: [.row(reloadRow)], with: .none)
                     }
                 })
+                */
+                
+                tableView.reloadData()
                 
                 if (scrollEnabled && needsToScroll) || forceToScroll {
                     tableView.scrollToRow(at: .row(row), at: .top, animated: false)
