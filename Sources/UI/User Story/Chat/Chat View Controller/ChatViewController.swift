@@ -342,22 +342,30 @@ extension ChatViewController {
             }
         case let .itemUpdated(rows, messages, items):
             self.items = items
-            
+
+            /*            
             UIView.performWithoutAnimation {
                 tableView.reloadRows(at: rows.map({ .row($0) }), with: .none)
             }
-            
+            */
+
+            tableView.reloadData()
+ 
             if let reactionsView = reactionsView, let message = messages.first {
                 reactionsView.update(with: message)
             }
             
         case let .itemRemoved(row, items):
             self.items = items
-            
+           
+            /* 
             UIView.performWithoutAnimation {
                 tableView.deleteRows(at: [.row(row)], with: .none)
             }
-            
+            */
+           
+            tableView.reloadData()
+ 
         case .footerUpdated:
             updateFooterView()
             
