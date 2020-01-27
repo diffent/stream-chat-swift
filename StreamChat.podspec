@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = "StreamChat"
-  spec.version = "1.5.3"
+  spec.version = "1.5.333"
   spec.summary = "Stream iOS Chat"
   spec.description = "stream-chat-swift is the official Swift client and UI for Stream Chat, a service for building chat applications."
 
@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   spec.social_media_url = "https://getstream.io"
   spec.swift_version = "5.0"
   spec.platform = :ios, "11.0"
-  spec.source = { :git => "https://github.com/GetStream/stream-chat-swift.git", :tag => "#{spec.version}" }
+  spec.source = { :git => "https://github.com/diffent/stream-chat-swift.git", :tag => "#{spec.version}" }
   spec.requires_arc = true
 
   spec.source_files  = "Sources/UI/**/*.swift"
